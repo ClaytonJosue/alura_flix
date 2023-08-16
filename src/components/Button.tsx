@@ -1,20 +1,40 @@
 import styled from "styled-components";
+import themeButton from "../styles/buttons";
 
-const Button = styled.button<{ width?: string; bgColor?: string | number }>`
-  width: ${(props) => (props.width ? props.width : "180px")};
-  background-color: ${(props) =>
-    props.bgColor ? props.bgColor : "transparent"};
+const Button = styled.button<{
+  headerButton?: boolean;
+  newCategoryButton?: boolean;
+  saveButton?: boolean;
+  cleanButton?: boolean;
+}>`
+  ${(props) => (props.headerButton ? themeButton.headerButton : "")}
+  ${(props) => (props.newCategoryButton ? themeButton.newCategoryButton : "")}
+  ${(props) => (props.saveButton ? themeButton.saveButton : "")}
+  ${(props) => (props.cleanButton ? themeButton.cleanButton : "")}
 `;
 
 type ButtonProps = {
-  width?: string;
-  bgColor?: string | number;
   children: string;
+  headerButton?: boolean;
+  newCategoryButton?: boolean;
+  saveButton?: boolean;
+  cleanButton?: boolean;
 };
 
-function ButtonComponent({ width, bgColor, children }: ButtonProps) {
+function ButtonComponent({
+  headerButton,
+  newCategoryButton,
+  saveButton,
+  cleanButton,
+  children,
+}: ButtonProps) {
   return (
-    <Button width={width} bgColor={bgColor}>
+    <Button
+      headerButton={headerButton}
+      newCategoryButton={newCategoryButton}
+      saveButton={saveButton}
+      cleanButton={cleanButton}
+    >
       {children}
     </Button>
   );

@@ -4,10 +4,8 @@ function App() {
   return (
     <>
       <p>Hello World</p>
-      <ButtonComponent width={"360px"} bgColor="#ff00F3">
-        Salvar
-      </ButtonComponent>
-      <ButtonComponent>Teste</ButtonComponent>
+      <ButtonComponent headerButton>Header</ButtonComponent>
+      <ButtonComponent newCategoryButton>Teste</ButtonComponent>
     </>
   );
 }
