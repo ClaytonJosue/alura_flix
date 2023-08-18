@@ -9,7 +9,7 @@ import FrontEndTag from "./tags/FrontEnd";
 function BannerComponent() {
   return (
     <Banner>
-      <BannerImage src="BannerBackground.png" alt="Banner Image" />;
+      <BannerImage src="BannerBackground.png" alt="Banner Image" />
       <BannerFront>
         <BannerContent>
           <FrontEndTag />
