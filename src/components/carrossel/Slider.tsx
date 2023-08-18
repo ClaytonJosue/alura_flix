@@ -3,18 +3,39 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { SwiperBox } from "../../styles/carrossel/swiper";
+import VideoCard from "./VideoCard";
+import { videos_front, videos_data } from "../../data/dados_iniciais.json";
 
-function Slider() {
+type SliderProps = {
+  type: "front" | "data" | "mobile";
+};
+
+function Slider({ type }: SliderProps) {
+  function videoType() {
+    if (type == "front") {
+      return videos_front.map((video) => (
+        <SwiperSlide>
+          <VideoCard url={video.url} />
+        </SwiperSlide>
+      ));
+    }
+    if (type == "data") {
+      return videos_data.map((video) => (
+        <SwiperSlide>
+          <VideoCard url={video.url} />
+        </SwiperSlide>
+      ));
+    }
+  }
   return (
     <SwiperBox>
       <Swiper
         className="swiper-container"
         modules={[Navigation]}
         navigation={true}
+        slidesPerView={3}
       >
-        <SwiperSlide>Teste 1</SwiperSlide>
-        <SwiperSlide>Teste 2</SwiperSlide>
-        <SwiperSlide>Teste 3</SwiperSlide>
+        {videoType()}
       </Swiper>
     </SwiperBox>
   );
