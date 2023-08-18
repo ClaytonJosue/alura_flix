@@ -1,11 +1,9 @@
-import ButtonComponent from "./components/Button";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <p>Hello World</p>
-      <ButtonComponent headerButton>Header</ButtonComponent>
-      <ButtonComponent newCategoryButton>Teste</ButtonComponent>
+      <Header></Header>
     </>
   );
 }
